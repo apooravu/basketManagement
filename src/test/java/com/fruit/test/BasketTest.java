@@ -12,7 +12,12 @@ import com.fruit.itemManagement.ManageItemImpl;
 
 public class BasketTest {
 
-	private Basket basket = new Basket();
+	private Basket basket;
+	
+	@Before
+	public void setUp(){
+		basket = new Basket();
+	}
 
 	@Test(expected = BasketException.class)
 	public void testAddNullItem() {
@@ -45,6 +50,6 @@ public class BasketTest {
 		basket.addItem(item2);
 
 		assertEquals(1, basket.getItems().size());
-		assertEquals(new Integer(2), basket.getItems().get(item1));
+		assertEquals(2, basket.getItems().get(item1));
 	}
 }
