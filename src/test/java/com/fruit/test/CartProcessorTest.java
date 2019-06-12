@@ -15,7 +15,12 @@ import com.fruit.itemManagement.ManageItemImpl;
 
 public class CartProcessorTest {
 
-	private CartProcessor cartProcessor = new CartProcessor();
+	private CartProcessor cartProcessor ;
+	
+	@Before
+	public void TearUp(){
+		cartProcessor = new CartProcessor();
+	}
 
 	@Test
 	public void testWithNoItemsInBasket() throws Exception {
